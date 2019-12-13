@@ -16,7 +16,6 @@ public class TestBase {
 
     public void navigateToURL(String url) {
         driver.get(url);
-        driver.manage().window().maximize();
     }
 
     @AfterMethod
