@@ -9,7 +9,7 @@ public class TestBase {
     protected static WebDriver driver;
 
     @BeforeMethod
-    public void setUp() throws Exception {
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver", "c:\\Selenium\\chromedriver\\chromedriver.exe");
         driver = new ChromeDriver();
     }
