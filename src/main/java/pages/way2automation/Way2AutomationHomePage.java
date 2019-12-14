@@ -34,9 +34,14 @@ public class Way2AutomationHomePage {
     @FindBy(xpath = ".//input[@name='password']")
     private List<WebElement> passwordFields;
 
-
     @FindBy(xpath = ".//input[@value='Submit']")
     private List<WebElement> submitButtons;
+
+    @FindBy(linkText = "Widget")
+    private WebElement widget;
+
+    @FindBy(linkText = "Datepicker")
+    private WebElement datepicker;
 
     private WebDriver driver;
 
@@ -59,5 +64,14 @@ public class Way2AutomationHomePage {
         submitButtons.get(1).click();
         return PageFactory.initElements(driver, Way2AutomationHomePage.class);
     }
+
+    public Way2AutomationDatepickerPage goToDatePickerPage() {
+        WebElementUtils.waitForElementToBeClickable(driver, widget);
+        widget.click();
+        datepicker.click();
+        return PageFactory.initElements(driver, Way2AutomationDatepickerPage.class);
+    }
+
+
 }
 

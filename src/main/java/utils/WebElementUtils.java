@@ -18,7 +18,6 @@ public class WebElementUtils {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-
     private static Wait<WebDriver> wait(WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         return wait;
