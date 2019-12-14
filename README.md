@@ -1,7 +1,7 @@
 # Java Selenium testing framework 
 
 This is a Java Selenium project for doing web automation testing.
-## Running tests
+## Running tests on browser
 The tests are run on Chrome by default.
 
 ### Prerequisites
@@ -28,3 +28,5 @@ Tests are placed inside the folder "\src\test\java\":
 
 * TestEx3Ghost class -> searchBlog() : solution for exercise 3 on page "https://ghost.org/"
 * TestEx4Way2Automation class -> validateShownDate() : solution for exercise 4 on page "http://way2automation.com/way2auto_jquery/index.php""
+
+Tests are executed by running the methods having "@Test" annotation: "searchBlog()" and "validateShownDate()"
