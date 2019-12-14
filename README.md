@@ -6,7 +6,7 @@ The tests are run on Chrome by default.
 
 ### Prerequisites
 
-This example requires the following softwares to run.
+This example requires the following softwares to run:
   * [Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or openJDK
   * [Maven](https://maven.apache.org/download.cgi)
   * [Chrome driver](https://chromedriver.chromium.org/)
