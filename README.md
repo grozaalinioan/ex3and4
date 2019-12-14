@@ -1,6 +1,6 @@
-# Java Selenium testing framework 
+# Java Selenium testing project
 
-This is a Java Selenium project for doing web automation testing.
+This is a Java Selenium framework using Page Objects Model for doing web automation testing
 ## Running tests on browser
 The tests are run on Chrome by default.
 
