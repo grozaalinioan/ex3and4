@@ -32,4 +32,4 @@ Tests are placed inside the folder "\src\test\java\":
 Ways to run tests:
 * by running the methods having "@Test" annotation: "searchBlog()" and "validateShownDate()"
 or
-* by running the classes "TestEx3Ghost" and "TestEx4Way2Automation "
+* by running the classes "TestEx3Ghost" and "TestEx4Way2Automation"
