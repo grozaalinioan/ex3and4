@@ -14,17 +14,20 @@ public class GhostHomePage {
     @FindBy(xpath = "//h5[contains(text(),'Community Forum')]")
     private WebElement forum;
 
+    private static String PAGE_URL = "https://ghost.org/";
+
     private WebDriver driver;
 
     public GhostHomePage(WebDriver driver) {
         this.driver = driver;
-        driver.get("https://ghost.org/");
+        driver.get(PAGE_URL);
+        PageFactory.initElements(driver, this);
     }
 
     public GhostForumPage goToForumPage() {
         resources.click();
         WebElementUtils.waitForElementToBeClickable(driver, forum);
         forum.click();
-        return PageFactory.initElements(driver, GhostForumPage.class);
+        return new GhostForumPage(driver);
     }
 }

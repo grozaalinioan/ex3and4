@@ -26,18 +26,19 @@ public class GhostForumPage {
 
     public GhostForumPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public GhostForumPage searchData(String data) {
         WebElementUtils.waitForElementToBeVisible(driver, searchButton);
         searchButton.click();
         searchField.sendKeys(data);
-        return PageFactory.initElements(driver, GhostForumPage.class);
+        return this;
     }
 
     public GhostForumPage openOneSearchResult() {
         WebElementUtils.waitForElementToBeVisible(driver, results);
         items.get(1).click();
-        return PageFactory.initElements(driver, GhostForumPage.class);
+        return this;
     }
 }

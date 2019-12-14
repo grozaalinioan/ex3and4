@@ -32,11 +32,12 @@ public class Way2AutomationDatepickerPage {
 
     public Way2AutomationDatepickerPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public Way2AutomationDatepickerPage openFormatDate() {
         formatDateButton.click();
-        return PageFactory.initElements(driver, Way2AutomationDatepickerPage.class);
+        return this;
     }
 
     public Way2AutomationDatepickerPage setTodayDate() {
@@ -48,13 +49,13 @@ public class Way2AutomationDatepickerPage {
         WebElementUtils.waitForElementToBeVisible(driver, datepicker);
         datepicker.click();
         todayDate.click();
-        return PageFactory.initElements(driver, Way2AutomationDatepickerPage.class);
+        return this;
     }
 
-    public Way2AutomationDatepickerPage formatDateAsISO5601() {
+    public Way2AutomationDatepickerPage formatDateAsISO8601() {
         Select dropdownFormat = new Select(driver.findElement(By.id("format")));
         dropdownFormat.selectByVisibleText("ISO 8601 - yy-mm-dd");
-        return PageFactory.initElements(driver, Way2AutomationDatepickerPage.class);
+        return this;
     }
 
     public Way2AutomationDatepickerPage validateShownDate() {
@@ -66,7 +67,7 @@ public class Way2AutomationDatepickerPage {
         String currentDate = formatter.format(calendar.getTime());
 
         Assert.assertTrue(shownDate.equals(currentDate));
-        return PageFactory.initElements(driver, Way2AutomationDatepickerPage.class);
+        return this;
     }
 
 }

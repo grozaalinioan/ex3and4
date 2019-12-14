@@ -4,6 +4,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -43,11 +44,14 @@ public class Way2AutomationHomePage {
     @FindBy(linkText = "Datepicker")
     private WebElement datepicker;
 
+    private static String PAGE_URL = "http://way2automation.com/way2auto_jquery/index.php";
+
     private WebDriver driver;
 
     public Way2AutomationHomePage(WebDriver driver) {
         this.driver = driver;
-        driver.get("http://way2automation.com/way2auto_jquery/index.php");
+        driver.get(PAGE_URL);
+        PageFactory.initElements(driver, this);
     }
 
     public Way2AutomationHomePage register() {
@@ -62,14 +66,15 @@ public class Way2AutomationHomePage {
         usernameFields.get(1).sendKeys(generatedData);
         passwordFields.get(1).sendKeys(generatedData);
         submitButtons.get(1).click();
-        return PageFactory.initElements(driver, Way2AutomationHomePage.class);
+        return this;
     }
 
     public Way2AutomationDatepickerPage goToDatePickerPage() {
-        WebElementUtils.waitForElementToBeClickable(driver, widget);
-        widget.click();
-        datepicker.click();
-        return PageFactory.initElements(driver, Way2AutomationDatepickerPage.class);
+        Actions action = new Actions(driver);
+        action.moveToElement(widget).click().perform();
+        WebElementUtils.waitForElementToBeClickable(driver, datepicker);
+        action.moveToElement(datepicker).click().perform();
+        return new Way2AutomationDatepickerPage(driver);
     }
 
 
