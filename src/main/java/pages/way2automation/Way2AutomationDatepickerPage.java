@@ -63,7 +63,7 @@ public class Way2AutomationDatepickerPage {
 
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        String currentDate = formatter.format(calendar.getTime()).toString();
+        String currentDate = formatter.format(calendar.getTime());
 
         Assert.assertTrue(shownDate.equals(currentDate));
         return PageFactory.initElements(driver, Way2AutomationDatepickerPage.class);
