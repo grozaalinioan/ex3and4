@@ -3,7 +3,6 @@ import org.testng.annotations.Test;
 import pages.way2automation.Way2AutomationHomePage;
 
 public class TestEx4Way2Automation extends TestBase {
-    private Way2AutomationHomePage way2AutomationHomePage;
 
     @Test
     public void validateShownDate() {
