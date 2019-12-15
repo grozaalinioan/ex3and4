@@ -16,7 +16,7 @@ This example requires the following softwares to run:
 
 * Clone git folder
 * Download and install items from prerequisites list
-* Create maven project in IDE (IntelliJ IDEA, Eclipse etc.) 
+* Create maven project in IDE (IntelliJ IDEA, Eclipse etc.) using this code sources
 * Default location for chrome driver is "c:\\Selenium\\chromedriver\\chromedriver.exe"
 * To use default settings, create this folder "c:\\Selenium\\chromedriver\\" and copy the "chromedriver.exe" file
 * If you want to use another location for chrome driver, change the path in file "driverPath.txt" with your chrome driver path
